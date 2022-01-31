@@ -1,9 +1,9 @@
 <header>
-    <h1>Home</h1>
+    <h1>{{nombrePag}}</h1>
     <ul>
-        <li><a routerLink="/">Home</a></li>
-        <li><a routerLink="/owners">Owners</a></li>
-        <li><a routerLink="/vets">Vets</a></li>
+        <li><a (click)="cambiarTitulo('Home')" routerLink="/">Home</a></li>
+        <li><a (click)="cambiarTitulo('Owners')" routerLink="/owners">Owners</a></li>
+        <li><a (click)="cambiarTitulo('Vets')" routerLink="/vets">Vets</a></li>
     </ul>
 </header>
 

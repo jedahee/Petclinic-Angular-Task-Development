@@ -10,9 +10,8 @@ export class OwnersComponent implements OnInit {
 
   public listaOwners: any = [];
 
-  constructor(private ownerService: OwnerService, private owner: OwnerService) {
+  constructor(private ownerService: OwnerService) {
     this.ownerService.getOwners().subscribe(datos => {
-      console.log(datos);
       this.listaOwners = datos;
     });
   }

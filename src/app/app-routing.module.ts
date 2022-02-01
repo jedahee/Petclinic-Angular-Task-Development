@@ -2,7 +2,9 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
 import { OwnersComponent } from './components/owners/owners.component';
-import { VetsComponent } from './components/vets/vets.component';
+import { FormOwnerComponent } from './components/form-owner/form-owner.component';
+
+import { VeterinaiosComponent } from "./components/veterinaios/veterinaios.component";
 
 const routes: Routes = [
   {
@@ -14,8 +16,13 @@ const routes: Routes = [
     component: HomeComponent
   },
   {
-    path: "vets",
-    component: VetsComponent
+    path: "form-owner/:id",
+    component: FormOwnerComponent
+  },
+
+  {
+    path: "veterinarios",
+    component: VeterinaiosComponent
   },
 
 ];

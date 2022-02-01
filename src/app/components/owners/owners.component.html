@@ -1,6 +1,23 @@
 
 <div>
-    <ul>
-        <li *ngFor="let owner of listaOwners">{{ owner.firstName}} | {{ owner.lastName }}</li>
-    </ul>
+    <table border="1">
+        <thead>
+            <th>First name</th>
+            <th>Second name</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let owner of listaOwners">
+                <td>{{ owner.firstName }}</td>
+                <td>{{ owner.lastName }}</td>
+                <td routerLink="/form-owner/{{owner.id}}"><img src="assets/img/edit-2.svg"></td>
+                <td><img src="assets/img/x-circle.svg"></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <button routerLink="/form-owner/-1">
+        Añadir Owner
+    </button>
 </div>

@@ -1,0 +1,38 @@
+<form #ownerForm="ngForm" (ngSubmit)="onSubmit(ownerForm.value)">
+    <div>
+        <label for="nombre">Nombre</label>
+        <input required [(ngModel)]="owner.firstName" name="firstName" #firstName="ngModel" type="text" id="nombre">
+        <span [hidden]="firstName.valid || firstName.pristine">El nombre es obligatorio</span>
+    </div>
+    <div>
+        <label for="apell">Apellidos</label>
+        <input required [(ngModel)]="owner.lastName" name="lastName" #lastName="ngModel" type="text" id="apell">
+        <span [hidden]="lastName.valid || lastName.pristine">El apellido es obligatorio</span>
+    </div>
+    <div>
+        <label for="dir">Dirección</label>
+        <input required [(ngModel)]="owner.address" name="address" #address="ngModel" type="text" id="dir">
+        <span [hidden]="address.valid || address.pristine">La direccion es obligatoria</span>
+    </div>
+    <div>
+        <div>
+            <label for="ciudad">Ciudad</label>
+            <input required [(ngModel)]="owner.city" name="city" #city="ngModel" type="text" id="ciudad">
+            <span [hidden]="city.valid || city.pristine">La ciudad es obligatoria</span>
+        </div>
+        <div>
+            <label for="telefono">Telefono</label>
+            <input required [(ngModel)]="owner.telephone" name="telephone" #telephone="ngModel" type="text" id="telefono">
+            <span [hidden]="telephone.valid || telephone.pristine">El telefono es obligatorio</span>
+        </div>
+    </div>
+    <div>
+        <button type="submit" [disabled]="!ownerForm.valid">{{ textoBoton }}</button>
+        <button routerLink="/owners">
+            Cancelar
+        </button>
+    </div>
+    <p>
+        Respuesta: <span></span>
+    </p>
+</form>

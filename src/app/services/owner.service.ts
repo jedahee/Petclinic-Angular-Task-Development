@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Owner } from '../models/owner';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class OwnerService {
 
-  public url: string = "http://localhost/AJAX_M/ServicioWeb/petclinic/servicios.php";
+  public url: string = environment.API_URL;
 
   constructor(private http: HttpClient) { }
 

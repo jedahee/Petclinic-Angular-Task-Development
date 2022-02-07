@@ -21,7 +21,6 @@ export class OwnersComponent implements OnInit {
 
     if (confirm("¿Estás seguro que quieres realizar esta operación?")) {
       this.ownerService.deleteOwner(id).subscribe(datos => {
-        console.log(datos);
         this.listaOwners = datos;
       });
     }

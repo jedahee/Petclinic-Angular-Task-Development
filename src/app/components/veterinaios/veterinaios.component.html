@@ -14,10 +14,13 @@
                     {{ specialty.name }}
                 </p>
             </td>
-            <td><img src="assets/img/edit-2.svg"></td>
-            <td><img src="assets/img/x-circle.svg"></td>
+            <td routerLink="/form-vet/{{vet.id}}"><img src="assets/img/edit-2.svg"></td>
+            <td (click)="deleteVet(vet.id)"><img src="assets/img/x-circle.svg"></td>
         </tr>
     </tbody>
 </table>
 
+<button routerLink="/form-vet/-1">
+    Añadir Vet
+</button>
     

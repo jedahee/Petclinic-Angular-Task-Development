@@ -55,5 +55,5 @@ export class OwnerService {
 
     return this.http.post<Owner[]>(this.url, JSON.stringify(pa));
   }
-   
+
 }

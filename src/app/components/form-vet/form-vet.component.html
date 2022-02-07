@@ -1,1 +1,23 @@
-<p>form-vet works!</p>
+<form #vetForm="ngForm" (ngSubmit)="onSubmit(vetForm.value)">
+    <div>
+        <label for="nombre">Nombre</label>
+        <input required [(ngModel)]="vet.firstName" name="firstName" #firstName="ngModel" type="text" id="nombre">
+        <span [hidden]="firstName.valid || firstName.pristine">El nombre es obligatorio</span>
+    </div>
+    <div>
+        <label for="apell">Apellidos</label>
+        <input required [(ngModel)]="vet.lastName" name="lastName" #lastName="ngModel" type="text" id="apell">
+        <span [hidden]="lastName.valid || lastName.pristine">El apellido es obligatorio</span>
+    </div>
+
+    <select multiple #specialties="ngModel" [(ngModel)]="vet.specialties" name="specialties" id="especialidades">
+        <option [value]="specialty" *ngFor="let specialty of listaSpecialties">{{ specialty.name }}<option>
+    </select>
+    
+    <div>
+        <button type="submit" [disabled]="!vetForm.valid">{{ textoBoton }}</button>
+        <button routerLink="/veterinarios">
+            Cancelar
+        </button>
+    </div>
+</form>

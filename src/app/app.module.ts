@@ -10,6 +10,7 @@ import { HomeComponent } from './components/home/home.component';
 import { FormOwnerComponent } from './components/form-owner/form-owner.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { VeterinaiosComponent } from './components/veterinaios/veterinaios.component';
+import { FormVetComponent } from './components/form-vet/form-vet.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { VeterinaiosComponent } from './components/veterinaios/veterinaios.compo
     OwnersComponent,
     HomeComponent,
     FormOwnerComponent,
-    VeterinaiosComponent
+    VeterinaiosComponent,
+    FormVetComponent
   ],
   imports: [
     BrowserModule,

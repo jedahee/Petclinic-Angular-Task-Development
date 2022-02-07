@@ -1,13 +1,21 @@
 
 <table border="1">
     <thead>
-        <th>First name</th>
-        <th>Second name</th>
+        <th>Name</th>
+        <th>Specialties</th>
+        <th>Edit</th>
+        <th>Delete</th>
     </thead>
     <tbody>
         <tr *ngFor="let vet of listaVets">
-            <td>{{ vet.firstName }}</td>
-            <td>{{ vet.lastName }}</td>
+            <td>{{ vet.firstName + " " + vet.lastName }}</td>
+            <td>
+                <p *ngFor="let specialty of vet.specialties">
+                    {{ specialty.name }}
+                </p>
+            </td>
+            <td><img src="assets/img/edit-2.svg"></td>
+            <td><img src="assets/img/x-circle.svg"></td>
         </tr>
     </tbody>
 </table>

@@ -14,9 +14,11 @@ export class VeterinaiosComponent implements OnInit {
 
   constructor(private vetService: VetService) {
     this.vetService.getVets().subscribe(datos => {
+      console.log(datos);
       this.listaVets = datos;
     });
-   }
+  }
+
 
   ngOnInit(): void {
   }

@@ -17,6 +17,17 @@ export class OwnersComponent implements OnInit {
     });
   }
 
+  deleteOwner(id: number) {
+
+    if (confirm("¿Estás seguro que quieres realizar esta operación?")) {
+      this.ownerService.deleteOwner(id).subscribe(datos => {
+        console.log(datos);
+        this.listaOwners = datos;
+      });
+    }
+    
+  }
+
   ngOnInit(): void {
   }
 

@@ -45,7 +45,15 @@ export class OwnerService {
     };
 
     return this.http.post<Owner[]>(this.url, JSON.stringify(pa));
+  }
 
+  deleteOwner(id: number) {
+    let pa = {
+      accion: "BorraOwner",
+      id: id,
+    };
+
+    return this.http.post<Owner[]>(this.url, JSON.stringify(pa));
   }
    
 }

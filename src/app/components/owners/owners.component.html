@@ -12,7 +12,7 @@
                 <td>{{ owner.firstName }}</td>
                 <td>{{ owner.lastName }}</td>
                 <td routerLink="/form-owner/{{owner.id}}"><img src="assets/img/edit-2.svg"></td>
-                <td><img src="assets/img/x-circle.svg"></td>
+                <td (click)="deleteOwner(owner.id)"><img src="assets/img/x-circle.svg"></td>
             </tr>
         </tbody>
     </table>

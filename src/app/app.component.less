@@ -8,7 +8,7 @@ header {
 }
 
 h1 {
-    font-size: 2.5em;
+    font-size: @fontSize-xl;
     font-variant: small-caps;
     color: @light;
 }
@@ -21,3 +21,23 @@ ul {
 a {
     color: @light;
 }
+
+footer {
+    .flex-around;
+    background-color: @dark;
+    padding: @padding-md;
+    position: fixed;
+    bottom: 0;
+    height: 100px;
+    width: 100%;
+    
+    * {
+        margin: @margin-sm;
+        color: @light;
+        opacity: .7;
+    }
+
+    h3, h4 {
+        text-align: center;
+    }
+} 

@@ -23,9 +23,7 @@ export class VeterinaiosComponent implements OnInit {
       if (confirm("¿Estás seguro que quieres realizar esta operación?")) {
         this.vetService.deleteVet(id).subscribe(datos => {
           if (datos.result == "OK")
-            this.vetService.getVets().subscribe(datos => {
-              this.listaVets = datos;
-            });
+            this.listaVets = this.listaVets.filter(vet => !(vet.id === id));
         });
       }
     

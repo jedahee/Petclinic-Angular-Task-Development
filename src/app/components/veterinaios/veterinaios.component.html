@@ -1,26 +1,27 @@
 
-<table border="1">
-    <thead>
-        <th>Name</th>
-        <th>Specialties</th>
-        <th>Edit</th>
-        <th>Delete</th>
-    </thead>
-    <tbody>
-        <tr *ngFor="let vet of listaVets">
-            <td>{{ vet.firstName + " " + vet.lastName }}</td>
-            <td>
-                <p *ngFor="let specialty of vet.specialties">
-                    {{ specialty.name }}
-                </p>
-            </td>
-            <td routerLink="/form-vet/{{vet.id}}"><img src="assets/img/edit-2.svg"></td>
-            <td (click)="deleteVet(vet.id)"><img src="assets/img/x-circle.svg"></td>
-        </tr>
-    </tbody>
-</table>
+<div>
+    <table border="1">
+        <thead>
+            <th>Name</th>
+            <th>Specialties</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let vet of listaVets">
+                <td>{{ vet.firstName + " " + vet.lastName }}</td>
+                <td>
+                    <p *ngFor="let specialty of vet.specialties">
+                        {{ specialty.name }}
+                    </p>
+                </td>
+                <td routerLink="/form-vet/{{vet.id}}"><img src="assets/img/edit-2.svg"></td>
+                <td (click)="deleteVet(vet.id)"><img src="assets/img/x-circle.svg"></td>
+            </tr>
+        </tbody>
+    </table>
 
-<button routerLink="/form-vet/-1">
-    Añadir Vet
-</button>
-    
+    <button routerLink="/form-vet/-1">
+        Añadir Vet
+    </button>
+</div>

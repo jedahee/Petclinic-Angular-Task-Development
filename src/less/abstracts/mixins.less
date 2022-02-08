@@ -5,6 +5,13 @@
     //display: grid;
 }
 
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
 .flex-center {
     display: flex;
     align-items: center;
@@ -41,8 +48,17 @@
     justify-content: space-between;
 }
 
-.link {
+.tableMixin {
+    border-collapse: collapse;
+    
+    th {
+        font-weight: bold;
+    }
 
+    th, td {
+        padding: @padding-md;
+        text-align: center;
+    }
 }
 
 // OTHERS

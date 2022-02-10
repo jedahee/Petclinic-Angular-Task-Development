@@ -9,3 +9,37 @@
 .link-menu:hover {
     box-shadow: 0px 0px 1px 3px @light;
 }
+
+.buttonEdit, .buttonDelete {
+    .buttonMixin();
+    width: 10%;
+    cursor: pointer;
+    transition: background-color .4s ease;
+
+    svg {
+        stroke: @light;
+        transition: stroke .4s ease;
+    }
+}
+
+.buttonEdit {
+    background-color: @dark;
+}
+
+.buttonDelete {
+    background-color: @danger;
+}
+
+.buttonDelete:hover {
+    background-color: @light;
+    svg {
+        stroke: @danger;
+    }
+}
+
+.buttonEdit:hover {
+    background-color: @light;
+    svg {
+        stroke: @dark;
+    }
+}

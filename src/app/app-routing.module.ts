@@ -5,15 +5,16 @@ import { OwnersComponent } from './components/owners/owners.component';
 import { FormOwnerComponent } from './components/form-owner/form-owner.component';
 import { VeterinaiosComponent } from "./components/veterinaios/veterinaios.component";
 import { FormVetComponent } from './components/form-vet/form-vet.component';
+import { PettypeListaComponent } from './components/pettype-lista/pettype-lista.component';
 
 const routes: Routes = [
   {
-    path: "owners",
-    component: OwnersComponent
-  },
-  {
     path: "",
     component: HomeComponent
+  },
+  {
+    path: "owners",
+    component: OwnersComponent
   },
   {
     path: "form-owner/:id",
@@ -26,6 +27,10 @@ const routes: Routes = [
   {
     path: "veterinarios",
     component: VeterinaiosComponent
+  },
+  {
+    path: "pettype-lista",
+    component: PettypeListaComponent
   },
 
 ];

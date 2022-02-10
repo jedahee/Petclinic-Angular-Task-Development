@@ -11,6 +11,8 @@ import { FormOwnerComponent } from './components/form-owner/form-owner.component
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { VeterinaiosComponent } from './components/veterinaios/veterinaios.component';
 import { FormVetComponent } from './components/form-vet/form-vet.component';
+import { PettypeListaComponent } from './components/pettype-lista/pettype-lista.component';
+import { PettypeAddComponent } from './components/pettype-add/pettype-add.component';
 
 
 @NgModule({
@@ -20,7 +22,9 @@ import { FormVetComponent } from './components/form-vet/form-vet.component';
     HomeComponent,
     FormOwnerComponent,
     VeterinaiosComponent,
-    FormVetComponent
+    FormVetComponent,
+    PettypeListaComponent,
+    PettypeAddComponent
   ],
   imports: [
     BrowserModule,

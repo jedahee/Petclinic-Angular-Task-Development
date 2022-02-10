@@ -1,0 +1,46 @@
+@import '../../../styles.less';
+
+.container {
+    .flex-center();
+    position: absolute;
+    overflow-y: auto;
+    overflow-x: hidden;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: max-content;
+    max-height: 600px;
+    padding: 1em;
+    width: 70%;
+    border: 1px solid #9797979f;
+    border-radius: 10px;
+    box-shadow: 0px 0px 50px 10px rgb(170, 170, 170);
+    flex-direction: column;
+
+    section {
+        width: 100%;
+        .flex-center();
+    }
+    
+    section, div {
+        margin: @margin-sm;
+        display: flex;
+    }
+}
+
+.buttons {
+    width: 10%;
+    .flex-center();
+    transform: translateX(-10%);
+
+    button {
+        .flex-center();
+        padding: .9em .5em;
+        width: 100%;
+    }
+}
+
+input[type="text"] {
+    .input();
+    padding: 1em;
+}

@@ -50,20 +50,32 @@
 
 .tableMixin {
     border-collapse: collapse;
-    
+    border-radius: 10px;
+    overflow: hidden;
+
+    box-shadow: 0px 0px 50px 10px rgb(170, 170, 170);
     th {
         font-weight: bold;
         font-size: @fontSize-lg;
+        background-color: #1572a1a9;
+        color: @light;
+        
     }
 
     td {
-        font-size: 1.3em;
+        font-size: 1.3em;  
     }
 
     th, td {
         padding: @padding-lg;
         text-align: center;
     }
+}
+
+.inputMixin, .buttonMixin {
+    border: none;
+    outline: none;
+    background-color: transparent;
 }
 
 // OTHERS

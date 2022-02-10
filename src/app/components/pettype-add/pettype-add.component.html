@@ -1,0 +1,4 @@
+<form #ptForm="ngForm" (ngSubmit)="onSubmit(ptForm.value)">
+    <input name="name" #name="ngModel" type="text" [(ngModel)]="pett.name" type="text">
+    <input value="Save" type="submit" [disabled]="!ptForm.valid">
+</form>

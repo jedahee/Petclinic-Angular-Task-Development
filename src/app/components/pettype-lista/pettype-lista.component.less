@@ -2,15 +2,9 @@
 
 .container {
     .flex-center();
-    position: absolute;
-    overflow-y: auto;
-    overflow-x: hidden;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    height: max-content;
-    max-height: 600px;
-    padding: 1em;
+    padding: @padding-sm;
+    margin: auto;
+    margin-top: 2em;
     width: 70%;
     border: 1px solid #9797979f;
     border-radius: 10px;
@@ -22,8 +16,8 @@
         .flex-center();
     }
     
-    section, div {
-        margin: @margin-sm;
+    div {
+        margin: @margin-md @margin-sm;
         display: flex;
     }
 }
@@ -31,11 +25,11 @@
 .buttons {
     width: 10%;
     .flex-center();
-    transform: translateX(-10%);
+    transform: translateX(-11%);
 
     button {
         .flex-center();
-        padding: .9em .5em;
+        padding: .95em .5em;
         width: 100%;
     }
 }

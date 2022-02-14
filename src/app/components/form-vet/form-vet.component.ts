@@ -12,6 +12,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class FormVetComponent implements OnInit {
 
+  public selectedSpecialty: string = "";
   public vet: Vet;
   public textoBoton: string = "";
   public listaSpecialties: Specialty[] = [];

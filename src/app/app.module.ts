@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
@@ -13,6 +13,8 @@ import { VeterinaiosComponent } from './components/veterinaios/veterinaios.compo
 import { FormVetComponent } from './components/form-vet/form-vet.component';
 import { PettypeListaComponent } from './components/pettype-lista/pettype-lista.component';
 import { PettypeAddComponent } from './components/pettype-add/pettype-add.component';
+import { AccordionModule } from 'primeng/accordion';
+import { MultiSelectModule } from 'primeng/multiselect';
 
 
 @NgModule({
@@ -28,10 +30,13 @@ import { PettypeAddComponent } from './components/pettype-add/pettype-add.compon
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     CommonModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    AccordionModule,
+    MultiSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

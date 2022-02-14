@@ -12,6 +12,7 @@ export class PettypeListaComponent implements OnInit {
   public pettype: Pettype = <Pettype>{};
   public listaPetType: Pettype[] = [];
   public  isVisible = false;
+  public setId: number = -1;
 
   constructor(private PTService: PettypeService) {
     this.PTService.getPetTypes().subscribe(datos => {
@@ -25,6 +26,23 @@ export class PettypeListaComponent implements OnInit {
 
   anadirNuevoPetType(PT: Pettype) {
     this.listaPetType.push(PT);
+  }
+
+  estaEditando(id: number) {
+    return (this.setId != id);
+  }
+
+  borrarPettype() {
+
+  }
+
+  cancelarModificacion() {
+    
+  }
+
+  editarPettype(PT: Pettype, id: number) {
+    this.setId = id;
+    
   }
 
   ngOnInit(): void {

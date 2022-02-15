@@ -49,8 +49,14 @@ export class FormVetComponent implements OnInit {
         this.ruta.navigate(["/veterinarios"]);
       });
     } else {
-      this.vetService.editVet(this.vet).subscribe(datos => {
-        this.ruta.navigate(["/veterinarios"]);
+      vet.id=this.vet.id;
+      this.vetService.editVet(vet).subscribe(datos => {
+        console.log(datos.result);
+        if (datos.result == "OK")
+          this.ruta.navigate(["/veterinarios"]);
+        else
+          alert("No se ha podido modificar");
+        
       });
     }
   }

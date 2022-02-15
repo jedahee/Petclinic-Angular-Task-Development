@@ -7,10 +7,4 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'petclinic';
-
-  public nombrePag: string = "Home";
-
-  cambiarTitulo(nombre: string) {
-    this.nombrePag = nombre;
-  }
 }

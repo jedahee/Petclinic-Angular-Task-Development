@@ -15,7 +15,8 @@ import { PettypeListaComponent } from './components/pettype-lista/pettype-lista.
 import { PettypeAddComponent } from './components/pettype-add/pettype-add.component';
 import { AccordionModule } from 'primeng/accordion';
 import { MultiSelectModule } from 'primeng/multiselect';
-import { ElementRef } from '@angular/core';
+import { SpecialtiesComponent } from './specialties/specialties.component';
+
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { ElementRef } from '@angular/core';
     VeterinaiosComponent,
     FormVetComponent,
     PettypeListaComponent,
-    PettypeAddComponent
+    PettypeAddComponent,
+    SpecialtiesComponent
   ],
   imports: [
     BrowserModule,

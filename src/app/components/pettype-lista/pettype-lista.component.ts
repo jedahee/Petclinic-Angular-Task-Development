@@ -46,8 +46,7 @@ export class PettypeListaComponent implements OnInit {
         if (datos.result != "OK" || datos.result == "FAIL")
           alert("¡Ha habido un fallo en el borrado!");
         else {
-          this.listaPetType.filter(pt => pt.id != id);
-          console.log(this.listaPetType);
+          this.listaPetType=this.listaPetType.filter(pt => pt.id != id);
         }
       });
     }

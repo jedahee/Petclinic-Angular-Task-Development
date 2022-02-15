@@ -43,7 +43,7 @@ export class VetService {
       vet: vet,
     };
 
-    return this.http.post<Vet[]>(this.url, JSON.stringify(pa));
+    return this.http.post<any>(this.url, JSON.stringify(pa));
   }
 
   getVetByID(vetID: number) {

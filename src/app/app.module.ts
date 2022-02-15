@@ -15,7 +15,7 @@ import { PettypeListaComponent } from './components/pettype-lista/pettype-lista.
 import { PettypeAddComponent } from './components/pettype-add/pettype-add.component';
 import { AccordionModule } from 'primeng/accordion';
 import { MultiSelectModule } from 'primeng/multiselect';
-
+import { ElementRef } from '@angular/core';
 
 @NgModule({
   declarations: [

@@ -28,4 +28,22 @@ export class PettypeService {
     
     return this.http.post<Pettype>(this.url, JSON.stringify(pa));
   }
+
+  editPetTypes(PT: Pettype) {
+    let pa = {
+      accion: "ModificaPettype",
+      pettype: PT,
+    }
+    
+    return this.http.post<any>(this.url, JSON.stringify(pa));
+  }
+
+  borrarPettype(id: number) {
+    let pa = {
+      accion: "BorraPettype",
+      id: id,
+    }
+    
+    return this.http.post<any>(this.url, JSON.stringify(pa));
+  }
 }

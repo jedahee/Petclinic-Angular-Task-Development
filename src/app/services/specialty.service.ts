@@ -1,7 +1,6 @@
 import { Specialty } from './../models/specialty';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Owner } from '../models/owner';
 import { environment } from 'src/environments/environment';
 
 
@@ -19,5 +18,13 @@ export class SpecialtyService {
       accion: "ListarSpecialties",
     }
     return this.http.post<Specialty[]>(this.url, JSON.stringify(pa));
+  }
+
+  addSpecialty(specialty: Specialty) {
+    let pa = {
+      accion: "AnadeSpecialty",
+      specialty: specialty
+    }
+    return this.http.post<Specialty>(this.url, JSON.stringify(pa));
   }
 }

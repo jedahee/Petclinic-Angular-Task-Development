@@ -16,8 +16,8 @@
         </div>
     </section>
     
-    <div class="container_add">
-        <input type="text">
-        <button>Add</button>
-    </div>
+    <form class="container_add" #specialtyForm="ngForm" (ngSubmit)="onSubmit(specialtyForm.value)">
+        <input name="name" type="text" #name="ngModel" [(ngModel)]="specialty.name">
+        <button type="submit" [disabled]="!specialtyForm.valid">Add</button>
+    </form>
 </div>

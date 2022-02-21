@@ -15,7 +15,7 @@ import { PettypeListaComponent } from './components/pettype-lista/pettype-lista.
 import { PettypeAddComponent } from './components/pettype-add/pettype-add.component';
 import { AccordionModule } from 'primeng/accordion';
 import { MultiSelectModule } from 'primeng/multiselect';
-import { SpecialtiesComponent } from './specialties/specialties.component';
+import { SpecialtiesComponent } from './components/specialties/specialties.component';
 
 
 @NgModule({

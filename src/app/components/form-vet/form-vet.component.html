@@ -10,7 +10,7 @@
         <span [hidden]="lastName.valid || lastName.pristine">El apellido es obligatorio</span>
     </div>
 
-    <p-multiSelect [style]="{'width': '30%', 'color': '#FEFEFE', 'backgroundColor': '#1572A1'}" [options]="listaSpecialties" #specialties="ngModel" name="specialties" [(ngModel)]="selectedSpecialty" optionLabel="name" defaultLabel="Select a Vet"></p-multiSelect>
+    <p-multiSelect [style]="{'width': '30%', 'color': '#FEFEFE', 'backgroundColor': '#1572A1'}" [options]="listaSpecialties" #specialties="ngModel" name="specialties" [(ngModel)]="selectedSpecialty" optionLabel="name" defaultLabel="Select specialties"></p-multiSelect>
     <!--
     <select multiple #specialties="ngModel" [(ngModel)]="vet.specialties" name="specialties" id="especialidades">
         <option [value]="specialty" *ngFor="let specialty of listaSpecialties">{{ specialty.name }}<option>

@@ -17,10 +17,12 @@ export class PettypeAddComponent implements OnInit {
   constructor(private PTService: PettypeService) { }
 
   onSubmit(PT: Pettype) {
-    this.PTService.addPetTypes(PT).subscribe(pett => {
-      this.pett = pett;
-      this.onNew.emit(this.pett);
-    });
+    if (PT.name != undefined || PT.name != "") {
+      this.PTService.addPetTypes(PT).subscribe(pett => {
+        this.pett = pett;
+        this.onNew.emit(this.pett);
+      });
+    }
   }
 
   ngOnInit(): void {

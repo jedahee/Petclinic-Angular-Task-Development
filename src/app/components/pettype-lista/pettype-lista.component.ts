@@ -11,7 +11,7 @@ export class PettypeListaComponent implements OnInit {
   
   public pettype: Pettype = <Pettype>{};
   public listaPetType: Pettype[] = [];
-  public  isVisible = false;
+  public isVisible = false;
   public setId: number = -1;
   public copia: string = "";
 

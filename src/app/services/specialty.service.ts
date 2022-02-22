@@ -27,4 +27,20 @@ export class SpecialtyService {
     }
     return this.http.post<Specialty>(this.url, JSON.stringify(pa));
   }
+
+  editSpecialty(specialty: Specialty) {
+    let pa = {
+      accion: "ModificaSpecialty",
+      specialty: specialty
+    }
+    return this.http.post<any>(this.url, JSON.stringify(pa));
+  }
+
+  delSpecialty(id: number) {
+    let pa = {
+      accion: "BorraSpecialty",
+      id: id
+    }
+    return this.http.post<any>(this.url, JSON.stringify(pa));
+  }
 }

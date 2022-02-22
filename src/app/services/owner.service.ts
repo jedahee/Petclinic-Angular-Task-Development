@@ -50,6 +50,7 @@ export class OwnerService {
   deleteOwner(id: number) {
     let pa = {
       accion: "BorraOwner",
+      listado: "OK",
       id: id,
     };
 

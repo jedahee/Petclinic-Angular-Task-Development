@@ -1,0 +1,35 @@
+<div>
+    <section>
+        <h1>Propietario</h1>
+        <div>
+            <span>Nombre: </span>
+            <span>{{owner.firstName}} {{owner.lastName}}</span>
+        </div>
+        
+        <div>
+            <span>Dirección: </span>
+            <span>{{owner.address}}</span>
+        </div>
+        
+        <div>
+            <span>Ciudad: </span>
+            <span>{{owner.city}}</span>
+        </div>
+
+        <div>
+            <span>Teléfono: </span>
+            <span>{{owner.telephone}}</span>
+        </div>
+
+        <div>
+            <button routerLink="/owners">< Volver</button>
+            <button (click)="deleteOwner()">Eliminar owner</button>
+            <button routerLink="/form-owner/{{owner.id}}">Editar</button>
+            <button>Añadir nueva mascota</button>
+        </div>
+    </section>
+    <section>
+        <h1>Pets</h1>
+        <app-pet-list></app-pet-list>
+    </section>
+</div>

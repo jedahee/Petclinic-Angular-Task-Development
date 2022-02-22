@@ -16,6 +16,8 @@ import { PettypeAddComponent } from './components/pettype-add/pettype-add.compon
 import { AccordionModule } from 'primeng/accordion';
 import { MultiSelectModule } from 'primeng/multiselect';
 import { SpecialtiesComponent } from './components/specialties/specialties.component';
+import { DetailsOwnerComponent } from './components/details-owner/details-owner.component';
+import { PetListComponent } from './components/pet-list/pet-list.component';
 
 
 @NgModule({
@@ -28,7 +30,9 @@ import { SpecialtiesComponent } from './components/specialties/specialties.compo
     FormVetComponent,
     PettypeListaComponent,
     PettypeAddComponent,
-    SpecialtiesComponent
+    SpecialtiesComponent,
+    DetailsOwnerComponent,
+    PetListComponent
   ],
   imports: [
     BrowserModule,

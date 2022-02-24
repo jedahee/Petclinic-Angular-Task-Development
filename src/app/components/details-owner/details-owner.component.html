@@ -30,6 +30,8 @@
     </section>
     <section>
         <h1>Pets</h1>
-        <app-pet-list></app-pet-list>
+        <section *ngFor="let pet of petsOwner">
+            <app-pet-list [petInp]="pet" (eliminado)="actualizarListaPet($event)"></app-pet-list>
+        </section>
     </section>
 </div>

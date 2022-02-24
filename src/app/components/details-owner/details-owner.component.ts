@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { PetService } from 'src/app/services/pet.service';
 import { OwnerService } from 'src/app/services/owner.service';
 import { Owner } from 'src/app/models/owner';
+import { Pet } from 'src/app/models/pet';
 import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -11,12 +13,17 @@ import { Router, ActivatedRoute } from '@angular/router';
 export class DetailsOwnerComponent implements OnInit {
 
   public owner: Owner = <Owner>{};
+  public petsOwner: Pet[] = [];
 
-  constructor(private ownerService: OwnerService, private ruta: Router, private route: ActivatedRoute) {
+  constructor(private petService: PetService, private ownerService: OwnerService, private ruta: Router, private route: ActivatedRoute) {
     const ownerID = this.route.snapshot.params["id"];
 
     this.ownerService.getOwnerByID(ownerID).subscribe(datos => {
       this.owner = datos;
+    });
+
+    this.petService.getPetsByIdOwner(ownerID).subscribe(datos => {
+      this.petsOwner = datos;
     });
   }
 
@@ -26,6 +33,10 @@ export class DetailsOwnerComponent implements OnInit {
         this.ruta.navigate(["/owners"])
       });
     }
+  }
+
+  actualizarListaPet(event: any) {
+
   }
 
   ngOnInit(): void {

@@ -1,3 +1,4 @@
+import { FormPetComponent } from './components/form-pet/form-pet.component';
 import { SpecialtiesComponent } from './components/specialties/specialties.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -42,6 +43,11 @@ const routes: Routes = [
     path: "specialties",
     component: SpecialtiesComponent
   },
+  {
+    path: "form-pet/:idOwner/:idPet",
+    component: FormPetComponent
+  }
+  
 
 ];
 

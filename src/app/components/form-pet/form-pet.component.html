@@ -1,0 +1,27 @@
+<form #petForm="ngForm" (ngSubmit)="onSubmit(petForm.value)">
+    <div>
+        <label for="name">Nombre</label>
+        <input required [(ngModel)]="pet.name" name="name" #name="ngModel" type="text" id="nombre">
+        <span [hidden]="name.valid || name.pristine">El nombre es obligatorio</span>
+    </div>
+    <div>
+        <label for="birthDate">Fecha de nacimiento</label>
+        <input required [(ngModel)]="pet.birthDate" name="birthDate" #birthDate="ngModel" type="date" id="birthDate">
+        <span [hidden]="birthDate.valid || birthDate.pristine">La fecha de nacimiento es obligatoria</span>
+    </div>
+
+    <select #type="ngModel" [(ngModel)]="pettype.id" name="type" id="type">
+        <option [value]="type.id" *ngFor="let type of types">{{ type.name }}<option>
+    </select>
+
+    <select  *ngIf="petID != -1" #owner="ngModel" [(ngModel)]="pet.owner" name="owner" id="owner">
+        <option [value]="owner.id" *ngFor="let owner of owners">{{ owner.firstName + " " + owner.lastName}}<option>
+    </select>
+    
+    <div>
+        <button type="submit" [disabled]="!petForm.valid">{{textoBoton}}</button>
+        <button routerLink="/details-owner/{{ownerID}}">
+            Cancelar
+        </button>
+    </div>
+</form>

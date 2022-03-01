@@ -25,7 +25,7 @@
             <button routerLink="/owners">< Volver</button>
             <button (click)="deleteOwner()">Eliminar owner</button>
             <button routerLink="/form-owner/{{owner.id}}">Editar</button>
-            <button>Añadir nueva mascota</button>
+            <button routerLink="/form-pet/{{owner.id}}/-1">Añadir nueva mascota</button>
         </div>
     </section>
     <section>

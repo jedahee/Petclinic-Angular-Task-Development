@@ -18,6 +18,7 @@ import { MultiSelectModule } from 'primeng/multiselect';
 import { SpecialtiesComponent } from './components/specialties/specialties.component';
 import { DetailsOwnerComponent } from './components/details-owner/details-owner.component';
 import { PetListComponent } from './components/pet-list/pet-list.component';
+import { FormPetComponent } from './components/form-pet/form-pet.component';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { PetListComponent } from './components/pet-list/pet-list.component';
     PettypeAddComponent,
     SpecialtiesComponent,
     DetailsOwnerComponent,
-    PetListComponent
+    PetListComponent,
+    FormPetComponent
   ],
   imports: [
     BrowserModule,

@@ -10,17 +10,17 @@
         <span [hidden]="birthDate.valid || birthDate.pristine">La fecha de nacimiento es obligatoria</span>
     </div>
 
-    <select #type="ngModel" [(ngModel)]="pettype.id" name="type" id="type">
+    <select #type="ngModel" [(ngModel)]="pet.type.id" name="type" id="type">
         <option [value]="type.id" *ngFor="let type of types">{{ type.name }}<option>
     </select>
 
-    <select  *ngIf="petID != -1" #owner="ngModel" [(ngModel)]="pet.owner" name="owner" id="owner">
+    <select  *ngIf="petID != -1" #owner="ngModel" [(ngModel)]="pet.owner.id" name="owner" id="owner">
         <option [value]="owner.id" *ngFor="let owner of owners">{{ owner.firstName + " " + owner.lastName}}<option>
     </select>
     
     <div>
         <button type="submit" [disabled]="!petForm.valid">{{textoBoton}}</button>
-        <button routerLink="/details-owner/{{ownerID}}">
+        <button routerLink="/owner/{{pet.owner.id}}">
             Cancelar
         </button>
     </div>

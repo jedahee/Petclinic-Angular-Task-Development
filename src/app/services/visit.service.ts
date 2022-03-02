@@ -1,59 +1,60 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Pet } from '../models/pet';
+import { Visit } from '../models/visit';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
-export class PetService {
+export class VisitService {
 
   public url: string = environment.API_URL;
 
   constructor(private http: HttpClient) { }
 
-  getPetsByIdOwner(id: number) {
+  getVisits(id: number) {
     let pa = {
-      accion: "ListarPetsOwnerId",
+      accion: "ListarVisitasPet",
       id: id
     }
     
-    return this.http.post<Pet[]>(this.url, JSON.stringify(pa));
+    return this.http.post<Visit[]>(this.url, JSON.stringify(pa));
   }
 
-  getPetById(id: number) {
+  getVisitById(id: number) {
     let pa = {
-      accion: "ObtenerPetId",
+      accion: "ObtenerVisitId",
       id: id
     }
-
-    return this.http.post<Pet>(this.url, JSON.stringify(pa));
+    
+    return this.http.post<Visit>(this.url, JSON.stringify(pa));
   }
 
-  addPet(pet: Pet) {
+  addVisit(visit: Visit) {
     let pa = {
-      accion: "AnadePet",
-      pet: pet
+      accion: "AnadeVisit",
+      visit: visit
     }
-
+    
     return this.http.post<any>(this.url, JSON.stringify(pa));
   }
 
-  editPet(pet: Pet) {
+  delVisit(id: number) {
     let pa = {
-      accion: "ModificaPet",
-      pet: pet
-    }
-
-    return this.http.post<any>(this.url, JSON.stringify(pa));
-  }
-
-  borrarPet(id: number) {
-    let pa = {
-      accion: "BorraPet",
+      accion: "BorraVisit",
       id: id
     }
-
+    
     return this.http.post<any>(this.url, JSON.stringify(pa));
   }
+
+  editVisit(visit: Visit) {
+    let pa = {
+      accion: "ModificaVisit",
+      visit: visit
+    }
+    
+    return this.http.post<any>(this.url, JSON.stringify(pa));
+  }
+
 }

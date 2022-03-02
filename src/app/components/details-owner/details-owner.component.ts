@@ -36,7 +36,7 @@ export class DetailsOwnerComponent implements OnInit {
   }
 
   actualizarListaPet(event: any) {
-
+    this.petsOwner=this.petsOwner.filter(pt => pt.id != event);
   }
 
   ngOnInit(): void {

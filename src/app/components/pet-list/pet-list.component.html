@@ -1,4 +1,10 @@
 <h1>Detalles de: {{pet.name}}</h1>
 <p>Cumpleaños: {{pet.birthDate | date: 'dd/MM/yyyy'}}</p>
 <p>Tipo: {{pet.type.name}}</p>
+<button routerLink="/form-pet/{{pet.owner.id}}/{{pet.id}}">Modificar</button>
+<button (click)="borrarPet()">Borrar</button>
+<button>Añadir nueva visita</button>
+<section *ngFor="let visit of visitsPet">
+    <app-visit-list [visitInp]="visit"></app-visit-list>
+</section>
 <hr>

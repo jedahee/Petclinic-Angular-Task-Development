@@ -19,6 +19,7 @@ import { SpecialtiesComponent } from './components/specialties/specialties.compo
 import { DetailsOwnerComponent } from './components/details-owner/details-owner.component';
 import { PetListComponent } from './components/pet-list/pet-list.component';
 import { FormPetComponent } from './components/form-pet/form-pet.component';
+import { VisitListComponent } from './components/visit-list/visit-list.component';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { FormPetComponent } from './components/form-pet/form-pet.component';
     SpecialtiesComponent,
     DetailsOwnerComponent,
     PetListComponent,
-    FormPetComponent
+    FormPetComponent,
+    VisitListComponent
   ],
   imports: [
     BrowserModule,

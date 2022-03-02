@@ -20,7 +20,7 @@ export class FormPetComponent implements OnInit {
   public petID: number = -1;
   public owners: Owner [] = [];
   public types: Pettype [] = [];
-  public pet: Pet = <Pet>{};
+  public pet: Pet;
   public textoBoton: string = "";
 
   constructor(private ruta: Router, private route: ActivatedRoute, private ownerService: OwnerService, private petService: PetService, private ptService: PettypeService) {
@@ -32,11 +32,34 @@ export class FormPetComponent implements OnInit {
       this.types=datos;
     });
 
+    this.pet = {
+      id: -1,
+      name: "",
+      birthDate: new Date(),
+      type: <Pettype>{
+        id: -1,
+        name: '',
+
+      },
+      owner: <Owner>{
+        id: -1,
+        firstName: '',
+        lastName: '',
+        address: '',
+        city: '',
+        telephone: '',
+        pets: []
+      },
+      visits: []
+    }
+    
+
   }
 
   ngOnInit(): void {
-    this.ownerID = this.route.snapshot.params["idOwner"];
+    this.pet.owner.id = this.route.snapshot.params["idOwner"];
     this.petID = this.route.snapshot.params["idPet"];
+    
     
     if (this.petID == -1) {
       this.textoBoton = "Añadir";
@@ -49,35 +72,19 @@ export class FormPetComponent implements OnInit {
   }
   
 
-  onSubmit(pet: Pet) {
-    this.owner.id = this.ownerID;
-
-    pet.type = {
-      name: "",
-      id: this.pettype.id
-    } 
-
-    pet.owner = {
-      firstName: "",
-      lastName: "",
-      address: "",
-      city: "",
-      telephone: "",
-      pets: [],
-      id: this.owner.id
-    } 
+  onSubmit(pet: Pet): void {
 
     if (this.pet.id == -1) {
-      console.log(pet);
-      this.petService.addPet(pet).subscribe(datos => {
-        this.ruta.navigate(["/details-owner/" + this.ownerID]);
+      this.petService.addPet(this.pet).subscribe(datos => {
+        this.ruta.navigate(["/owner/" + this.pet.owner.id]);
       });
     } else {
       pet.id=this.pet.id;
-      this.petService.editPet(pet).subscribe(datos => {
+      
+      this.petService.editPet(this.pet).subscribe(datos => {
 
         if (datos.result == "OK")
-          this.ruta.navigate(["/details-owner/" + this.ownerID]);
+          this.ruta.navigate(["/owner/" + this.pet.owner.id]);
         else
           alert("No se ha podido modificar");
         

@@ -18,6 +18,7 @@ export class PetListComponent implements OnInit {
   @Output() eliminado = new EventEmitter<number>();
   public pet: Pet;
   public visitsPet: Visit[] = [];
+  public visit: Visit;
 
   constructor(private petService: PetService, private visitService: VisitService) {
     this.pet = {
@@ -27,6 +28,13 @@ export class PetListComponent implements OnInit {
       type: new Pettype(),
       owner: new Owner(),
       visits: [],
+    }
+
+    this.visit = {
+      id: 0,
+      visitDate: new Date(),
+      description: "",
+      petId: this.pet.id
     }
   }
 
@@ -47,11 +55,28 @@ export class PetListComponent implements OnInit {
       this.pet = datos;
     });
 
-    
-
     this.visitService.getVisits(this.petInp.id).subscribe(datos=>{
       this.visitsPet = datos;
     });
+  }
+
+  onSubmit(visit: Visit) {
+    if (visit.description != undefined || visit.description != "") {
+      visit.id = this.visit.id;
+      visit.petId = this.petInp.id;
+      console.log(visit);
+      this.visitService.addVisit(visit).subscribe(datos => {
+        if (datos.result == "OK") {
+          
+          this.visitsPet.push(visit);
+        } else {
+          alert("No se ha podido anadir");
+        }
+        
+        
+        
+      });
+    }
   }
 
 }

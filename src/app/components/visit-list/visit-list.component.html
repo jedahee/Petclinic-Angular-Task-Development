@@ -1,6 +1,7 @@
-<form style="border: 2px solid black">
-    <h1>{{visit.visitDate}}</h1>
-    <h1>{{visit.description}}</h1>
-    <button>Modificar</button>
-    <button>Borrar</button>
+<form style="border: 1px solid black" #visitForm="ngForm" (ngSubmit)="onSubmit(visitForm.value)">
+    <input name="petId" type="hidden" #petId="ngModel" [(ngModel)]="visit.petId" [value]="visitInp.petId">
+    <input name="visitDate" type="date" #visitDate="ngModel" [(ngModel)]="visit.visitDate">
+    <input name="description" #description="ngModel" [(ngModel)]="visit.description" type="text" >
+    <button  type="submit" [disabled]="!visitForm.valid">Modificar</button>
 </form>
+<button>Borrar</button>

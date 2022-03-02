@@ -28,4 +28,8 @@ export class VisitListComponent implements OnInit {
     });
   }
 
+  onSubmit(visit: Visit) {
+
+  }
+
 }

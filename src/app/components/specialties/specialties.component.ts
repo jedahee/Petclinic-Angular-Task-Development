@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { SpecialtyService } from '../../services/specialty.service';
 
 @Component({
+  standalone: false,
   selector: 'app-specialties',
   templateUrl: './specialties.component.html',
   styleUrls: ['./specialties.component.less']

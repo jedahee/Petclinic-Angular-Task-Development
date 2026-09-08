@@ -3,6 +3,7 @@ import { OwnerService } from 'src/app/services/owner.service';
 import { Owner } from 'src/app/models/owner';
 
 @Component({
+  standalone: false,
   selector: 'app-owners',
   templateUrl: './owners.component.html',
   styleUrls: ['./owners.component.less']

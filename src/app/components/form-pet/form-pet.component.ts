@@ -8,6 +8,7 @@ import { OwnerService } from 'src/app/services/owner.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
+  standalone: false,
   selector: 'app-form-pet',
   templateUrl: './form-pet.component.html',
   styleUrls: ['./form-pet.component.less']

@@ -8,6 +8,7 @@ import { VisitService } from 'src/app/services/visit.service';
 
 
 @Component({
+  standalone: false,
   selector: 'app-pet-list',
   templateUrl: './pet-list.component.html',
   styleUrls: ['./pet-list.component.less']

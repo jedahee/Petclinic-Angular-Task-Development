@@ -3,6 +3,7 @@ import { Visit } from 'src/app/models/visit';
 import { VisitService } from 'src/app/services/visit.service';
 
 @Component({
+  standalone: false,
   selector: 'app-visit-list',
   templateUrl: './visit-list.component.html',
   styleUrls: ['./visit-list.component.less']

@@ -3,6 +3,7 @@ import { VetService } from './../../services/vet.service';
 import { Vet } from "../../models/vet";
 
 @Component({
+  standalone: false,
   selector: 'app-veterinaios',
   templateUrl: './veterinaios.component.html',
   styleUrls: ['./veterinaios.component.less']

@@ -6,6 +6,7 @@ import { VetService } from './../../services/vet.service';
 import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
+  standalone: false,
   selector: 'app-form-vet',
   templateUrl: './form-vet.component.html',
   styleUrls: ['./form-vet.component.less']

@@ -4,6 +4,7 @@ import { PettypeService } from 'src/app/services/pettype.service';
 import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
+  standalone: false,
   selector: 'app-pettype-add',
   templateUrl: './pettype-add.component.html',
   styleUrls: ['./pettype-add.component.less']

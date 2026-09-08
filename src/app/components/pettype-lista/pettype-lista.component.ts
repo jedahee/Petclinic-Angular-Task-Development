@@ -3,6 +3,7 @@ import { Pettype } from 'src/app/models/pettype';
 import { PettypeService } from 'src/app/services/pettype.service';
 
 @Component({
+  standalone: false,
   selector: 'app-pettype-lista',
   templateUrl: './pettype-lista.component.html',
   styleUrls: ['./pettype-lista.component.less']

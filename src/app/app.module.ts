@@ -20,6 +20,8 @@ import { DetailsOwnerComponent } from './components/details-owner/details-owner.
 import { PetListComponent } from './components/pet-list/pet-list.component';
 import { FormPetComponent } from './components/form-pet/form-pet.component';
 import { VisitListComponent } from './components/visit-list/visit-list.component';
+import { providePrimeNG } from 'primeng/config';
+import Lara from '@primeng/themes/lara';
 
 
 @NgModule({
@@ -48,7 +50,9 @@ import { VisitListComponent } from './components/visit-list/visit-list.component
     AccordionModule,
     MultiSelectModule
   ],
-  providers: [],
+  providers: [
+    providePrimeNG({ theme: { preset: Lara } })
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

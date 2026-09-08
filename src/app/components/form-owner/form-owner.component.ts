@@ -4,6 +4,7 @@ import { OwnerService } from 'src/app/services/owner.service';
 import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
+  standalone: false,
   selector: 'app-form-owner',
   templateUrl: './form-owner.component.html',
   styleUrls: ['./form-owner.component.less']

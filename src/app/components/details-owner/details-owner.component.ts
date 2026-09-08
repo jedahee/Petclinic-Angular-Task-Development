@@ -6,6 +6,7 @@ import { Pet } from 'src/app/models/pet';
 import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
+  standalone: false,
   selector: 'app-details-owner',
   templateUrl: './details-owner.component.html',
   styleUrls: ['./details-owner.component.less']
